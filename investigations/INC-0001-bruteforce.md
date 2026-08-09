@@ -86,7 +86,7 @@ Validated available sourcetypes in the `botsv2` index to identify the correct Wi
 
 ### Query 2
 
-```spl id="v8m4q0"
+```spl id="wpr2i3"
 index=botsv2
 | stats count by sourcetype
 | sort - count
@@ -110,6 +110,8 @@ index=botsv2
 * wineventlog: 14,492
 * stream:tcp: 14,124
 
+**Observation:** The `botsv2` index contains Windows event logs under the sourcetype `wineventlog`, confirming that Windows authentication events are available for investigation.
+
 ### Initial Assessment
 
 Windows events are present under the sourcetype `wineventlog`. The original query likely failed because the field `EventCode` is not present or uses a different field name in this dataset.
@@ -118,21 +120,6 @@ Windows events are present under the sourcetype `wineventlog`. The original quer
 
 Pending.
 
-## Impact Assessment
-
-Pending.
-
-## Recommended Actions
-
-Pending.
-
-## MITRE ATT&CK Mapping
-
-* Technique: T1110 - Brute Force
-
-## Analyst
-
-Shrikant Raut
 
 ### Query 3
 
